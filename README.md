@@ -22,3 +22,7 @@ Then, to actually run the Flask application locally:
 ```bash
 $ flask run
 ```
+
+For instructions on how a Flask application works, see this tutorial:
+
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world

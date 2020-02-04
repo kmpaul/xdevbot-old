@@ -25,4 +25,6 @@ $ flask run
 
 For instructions on how a Flask application works, see this tutorial:
 
-https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+https://flask.palletsprojects.com/en/1.1.x/tutorial/
+
+This tutorial was followed in the construction of this application.

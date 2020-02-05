@@ -18,3 +18,12 @@ The `aiohttp` package provides a web server and client that uses this fundamenta
 `asyncio` functionality.  To learn more about `aiohttp`, you can read up on it here:
 
 - https://docs.aiohttp.org/en/v3.0.1/tutorial.html#aiohttp-tutorial
+
+Running Locally
+---------------
+
+To run this application locally, you need simply run:
+
+```bash
+$ python app/main.py
+```

@@ -25,5 +25,5 @@ Running Locally
 To run this application locally, you need simply run:
 
 ```bash
-$ python xdevbot
+$ python -m xdevbot
 ```

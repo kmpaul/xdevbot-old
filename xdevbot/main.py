@@ -26,8 +26,8 @@ async def init_app(config=None):
 
 
 @click.command(cls=CommandWithConfig)
-def main(argv):
-    config = get_config(argv)
+def main(**kwargs):
+    config = get_config(**kwargs)
     logging.basicConfig(level=config['logging'])
     app = init_app(config=config)
     web.run_app(app, host=config['host'], port=config['port'])

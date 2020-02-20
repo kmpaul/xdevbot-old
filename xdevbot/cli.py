@@ -30,7 +30,6 @@ async def init_app(config=None):
 @click.option('--port', default=None, type=int, help='Server port number')
 @click.option('--logging', default=logging.INFO, help='Logging output level')
 def cli(**config):
-    print(config)
     logging.basicConfig(level=config['logging'])
     app = init_app(config=config)
     web.run_app(app, host=config['host'], port=config['port'])

@@ -29,7 +29,7 @@ async def init_app(config=None):
 @click.option('--host', default=None, type=str, help='Server IP address')
 @click.option('--port', default=None, type=int, help='Server port number')
 @click.option('--logging', default=logging.INFO, help='Logging output level')
-def main(**config):
+def cli(**config):
     print(config)
     logging.basicConfig(level=config['logging'])
     app = init_app(config=config)

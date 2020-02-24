@@ -28,10 +28,6 @@ async def init_app(config=None):
 
 
 def config_callback(ctx, config_param, config_file):
-    print('IN CALLBACK:')
-    for prm in ctx.command.params:
-        print(f'   {prm.name}: {prm.default}')
-    print(f'   * {config_param.name}: {config_file}')
     config_paths = DEFAULT_CONFIG_PATHS + ([config_file] if config_file else [])
     cfgparser = ConfigParser()
     cfgparser.read(config_paths)
@@ -56,9 +52,7 @@ def config_callback(ctx, config_param, config_file):
     callback=config_callback,
 )
 def cli(**config):
-    print('IN INVOCATION:')
-    for param in config:
-        print(f'   {param}: {config[param]}')
+    print(config)
     logging.basicConfig(level=config['logging'])
     app = init_app(config=config)
     web.run_app(app, host=config['host'], port=config['port'])

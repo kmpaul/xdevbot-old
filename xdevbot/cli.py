@@ -52,7 +52,6 @@ def config_callback(ctx, config_param, config_file):
     callback=config_callback,
 )
 def cli(**config):
-    print(config)
     logging.basicConfig(level=config['logging'])
     app = init_app(config=config)
     web.run_app(app, host=config['host'], port=config['port'])

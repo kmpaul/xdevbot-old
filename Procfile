@@ -1,1 +1,1 @@
-web: python -m xdevbot --port 443
+web: python -m xdevbot

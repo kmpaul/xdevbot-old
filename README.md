@@ -19,6 +19,28 @@ The `aiohttp` package provides a web server and client that uses this fundamenta
 
 - https://docs.aiohttp.org/en/v3.0.1/tutorial.html#aiohttp-tutorial
 
+motor
+-----
+
+This Bot is designed to work with MongoDB for persistent data storage.  MLab
+provides a cloud-based MongoDB DBaaS which has a free "sandbox" level (512 MB).
+The Bot does not need much storage, so we use this service for free, but we may
+need to upgrade to a paid service in the future, or switch to a different DB
+solution.
+
+The recommended `asyncio`-compatible driver for MongoDB is `motor`.  The tutorial
+for `motor` can be found here:
+
+- https://motor.readthedocs.io/en/stable/tutorial-tornado.html
+
+Heroku
+------
+
+This Bot is also designed to run on Heroku.  It is not large or demanding, so we
+do not need to pay for anything, yet.  The launch command that is needed for the
+Bot to run on Heroku is stored in the `Procfile` file, and the version of Python
+needed to run is specified in the `runtime.txt` file.
+
 Running Locally
 ---------------
 
@@ -26,4 +48,20 @@ To run this application locally, you need simply run:
 
 ```bash
 $ python -m xdevbot
+```
+
+However, this application uses `click` for its CLI, which means you can get the
+full help description with:
+
+```bash
+$ python -m xdevbot --help
+Usage: xdevbot [OPTIONS]
+
+Options:
+  --version          Show the version and exit.
+  --host TEXT        Server IP address
+  --port INTEGER     Server port number
+  --logging INTEGER  Logging output level
+  --config PATH      User-defined configuration file location
+  --help             Show this message and exit.
 ```

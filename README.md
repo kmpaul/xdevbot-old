@@ -29,9 +29,9 @@ need to upgrade to a paid service in the future, or switch to a different DB
 solution.
 
 The recommended `asyncio`-compatible driver for MongoDB is `motor`.  The tutorial
-for `motor` can be found here:
+for `motor` with `asyncio` can be found here:
 
-- https://motor.readthedocs.io/en/stable/tutorial-tornado.html
+- https://motor.readthedocs.io/en/stable/tutorial-asyncio.html
 
 Heroku
 ------

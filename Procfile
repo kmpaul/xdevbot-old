@@ -1,1 +1,1 @@
-web: python -m xdevbot
+web: python -m xdevbot --port $PORT

@@ -83,7 +83,7 @@ def test_cli_env_configfile_overridden(cli_env, cli_configfile):
     assert ctx.params == params
 
 
-async def test_init_app(aiohttp_client, loop):
+async def test_init_app_defaults(aiohttp_client, loop):
     app = await init_app()
     client = await aiohttp_client(app)
     resp = await client.get('/')

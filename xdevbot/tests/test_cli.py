@@ -1,6 +1,6 @@
 import logging
 
-from xdevbot.cli import DEFAULT_CONFIG, cli, init_app
+from xdevbot.cli import DEFAULT_CONFIG, cli
 
 
 def test_cli_defaults():
@@ -81,12 +81,3 @@ def test_cli_env_configfile_overridden(cli_env, cli_configfile):
         auto_envvar_prefix='XDEV',
     )
     assert ctx.params == params
-
-
-async def test_init_app_defaults(aiohttp_client, loop):
-    app = await init_app()
-    client = await aiohttp_client(app)
-    resp = await client.get('/')
-    assert resp.status == 200
-    text = await resp.text()
-    assert text == 'Hello Aiohttp!'

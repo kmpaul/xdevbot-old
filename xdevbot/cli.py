@@ -10,10 +10,11 @@ from .database import close_db, init_db
 from .middlewares import setup_middlewares
 from .routes import setup_routes
 
+DEFAULT_CONFIG = {'host': None, 'port': None, 'logging': logging.INFO, 'mongodb': None}
 DEFAULT_CONFIG_PATHS = ['config.ini']
 
 
-async def init_app(config=None):
+async def init_app(config=DEFAULT_CONFIG):
     app = web.Application()
     app['config'] = config
     aiohttp_jinja2.setup(app, loader=jinja2.PackageLoader(__package__, 'templates'))
@@ -39,10 +40,10 @@ def config_callback(ctx, config_param, config_file):
 
 @click.command()
 @click.version_option(prog_name='Xdev Bot', version='0.0.1')
-@click.option('--host', default=None, type=str, help='Server IP address')
-@click.option('--port', default=None, type=int, help='Server port number')
-@click.option('--logging', default=logging.INFO, help='Logging output level')
-@click.option('--mongodb', default=None, type=str, help='MongoDB URI')
+@click.option('--host', default=DEFAULT_CONFIG['host'], type=str, help='Server IP address')
+@click.option('--port', default=DEFAULT_CONFIG['port'], type=int, help='Server port number')
+@click.option('--logging', default=DEFAULT_CONFIG['logging'], help='Logging output level')
+@click.option('--mongodb', default=DEFAULT_CONFIG['mongodb'], type=str, help='MongoDB URI')
 @click.option(
     '--config',
     default=None,

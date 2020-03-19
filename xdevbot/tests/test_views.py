@@ -1,7 +1,7 @@
 from xdevbot.cli import init_app
 
 
-async def test_init_app_defaults(aiohttp_client, loop):
+async def test_index(aiohttp_client, loop):
     app = await init_app()
     client = await aiohttp_client(app)
     resp = await client.get('/')

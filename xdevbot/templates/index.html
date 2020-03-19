@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>404 Page Not Found</title>
+<title>{{ title }}</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
 <style>
 h1{
@@ -19,7 +19,7 @@ margin-top:-40px;
 p{
 text-align:center;
 font-family: 'Roboto', sans-serif;
-font-size:14px;
+font-size:18px;
 }
 
 .container
@@ -32,9 +32,11 @@ margin-top:15%;
 </head>
 <body>
 <div class="container">
-<h1>404</h1>
-<h2>Page Not Found</h2>
-<p>The Page you are looking for doesn't exist or an other error occured. Go to <a href="/">Home Page.</a></p>
+<h1>{{ title }}</h1>
+{% if subtitle %}
+<h2>{{ subtitle }}</h2>
+{% endif %}
+<p>{{ content }}</p>
 </div>
 </body>
 </html>

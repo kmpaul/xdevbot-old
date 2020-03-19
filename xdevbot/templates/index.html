@@ -1,11 +1,13 @@
 <html>
 <head>
 <title>{{ title }}</title>
+<link rel='icon' href="{{ url('static', filename='img/favicon.ico') }}" type='image/x-icon'>
 <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel=stylesheet>
 <link href="{{ url('static', filename='css/style.css') }}" rel=stylesheet type=text/css>
 </head>
 <body>
 <div class="container">
+<img src="{{ url('static', filename='img/xdev_logo.png') }}" alt='Xdev'>
 <h1>{{ title }}</h1>
 {% if subtitle %}
 <h2>{{ subtitle }}</h2>

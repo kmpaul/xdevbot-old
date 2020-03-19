@@ -1,3 +1,19 @@
+body {
+    background-color: #333336;
+    color: #CCCCCC;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+a {
+    color: #BBBBDD;
+}
+
 h1 {
     font-size:80px;
     font-weight:800;

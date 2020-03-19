@@ -1,23 +1,11 @@
 import logging
 
-import click
-
-from xdevbot.cli import cli
-
-
-def click_test_cmd(cmd: click.Command):
-    @click.command(cmd.name)
-    def test_cmd(**kwargs):
-        click.echo(kwargs)
-
-    test_cmd.params = cmd.params
-    return test_cmd
+from xdevbot.cli import DEFAULT_CONFIG, cli, init_app
 
 
 def test_cli_defaults():
-    params = {'host': None, 'port': None, 'logging': logging.INFO, 'mongodb': None}
     ctx = cli.make_context(cli.name, args=[], auto_envvar_prefix='XDEV')
-    assert ctx.params == params
+    assert ctx.params == DEFAULT_CONFIG
 
 
 def test_cli_host():
@@ -93,3 +81,12 @@ def test_cli_env_configfile_overridden(cli_env, cli_configfile):
         auto_envvar_prefix='XDEV',
     )
     assert ctx.params == params
+
+
+async def test_init_app(aiohttp_client, loop):
+    app = await init_app()
+    client = await aiohttp_client(app)
+    resp = await client.get('/')
+    assert resp.status == 200
+    text = await resp.text()
+    assert text == 'Hello Aiohttp!'

@@ -41,6 +41,12 @@ do not need to pay for anything, yet.  The launch command that is needed for the
 Bot to run on Heroku is stored in the `Procfile` file, and the version of Python
 needed to run is specified in the `runtime.txt` file.
 
+CircleCI
+--------
+
+This Bot also has continuous integration enabled with CircleCI.  This means that
+Heroku can be used to autodeploy when CI tests pass.
+
 Running Locally
 ---------------
 

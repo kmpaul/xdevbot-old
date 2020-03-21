@@ -2,6 +2,7 @@ name: xdevbot
 channels:
   - conda-forge
 dependencies:
+  - python=3.8.2
   - aiohttp
   - aiohttp-jinja2
   - click

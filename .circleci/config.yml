@@ -9,7 +9,7 @@ workflows:
 jobs:
   tests:
     docker:
-      - image: continuumio/miniconda3
+      - image: continuumio/miniconda3:latest
     environment:
       ENV_FILE: ".circleci/environment.yml"
     steps:

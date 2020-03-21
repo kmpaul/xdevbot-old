@@ -1,15 +1,17 @@
-name: xdevbot
+name: xdevbot2
 channels:
   - conda-forge
 dependencies:
-  - python=3.8.2
+  - python=3.8
   - aiohttp
   - aiohttp-jinja2
   - click
-  - motor
-  - dnspython
   - bs4
   - pytest
   - pytest-aiohttp
   - pytest-cov
   - codecov
+  - pip
+  - pip:
+    - motor
+    - dnspython

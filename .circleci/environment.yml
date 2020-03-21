@@ -1,0 +1,14 @@
+name: xdevbot
+channels:
+  - conda-forge
+dependencies:
+  - aiohttp
+  - aiohttp-jinja2
+  - click
+  - motor
+  - dnspython
+  - bs4
+  - pytest
+  - pytest-aiohttp
+  - pytest-cov
+  - codecov

@@ -7,7 +7,7 @@ import pytest
 def cli_env(monkeypatch):
     monkeypatch.setenv('XDEV_HOST', 'http://127.0.0.1')
     monkeypatch.setenv('XDEV_PORT', '6789')
-    monkeypatch.setenv('LOGGING', logging.CRITICAL)
+    monkeypatch.setenv('LOGGING', str(logging.CRITICAL))
 
 
 @pytest.fixture

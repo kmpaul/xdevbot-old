@@ -1,3 +1,6 @@
+[![circleci](https://img.shields.io/circleci/build/gh/ncar-xdev/xdevbot?label=circleci)](https://circleci.com/gh/ncar-xdev/xdevbot)
+[![codecov](https://img.shields.io/codecov/c/gh/ncar-xdev/xdevbot?label=codecov)](https://codecov.io/gh/ncar-xdev/xdevbot)
+
 XdevBot
 =======
 

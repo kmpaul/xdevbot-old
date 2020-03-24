@@ -1,6 +1,7 @@
 import logging
 
 import pytest
+from mockupdb import MockupDB
 
 
 @pytest.fixture
@@ -20,3 +21,11 @@ port = 9999
 """
     )
     return f
+
+
+@pytest.yield_fixture
+def mockdbserver(loop):
+    server = MockupDB()
+    server.run()
+    yield server
+    server.stop()

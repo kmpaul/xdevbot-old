@@ -1,7 +1,6 @@
 [![circleci](https://img.shields.io/circleci/build/gh/ncar-xdev/xdevbot?label=circleci)](https://circleci.com/gh/ncar-xdev/xdevbot)
 [![codecov](https://img.shields.io/codecov/c/gh/ncar-xdev/xdevbot?label=codecov)](https://codecov.io/gh/ncar-xdev/xdevbot)
 [![license](https://img.shields.io/github/license/ncar-xdev/xdevbot)](http://www.apache.org/licenses/LICENSE-2.0)
-[![release](https://img.shields.io/github/v/release/ncar-xdev/xdevbot)](https://github.com/ncar-xdev/xdevbot/releases/latest)
 [![heroku](https://img.shields.io/website?down_color=red&down_message=offline&label=heroku&up_color=green&up_message=online&url=https%3A%2F%2Fxdevbot.herokuapp.com%2F)](https://xdevbot.herokuapp.com/)
 
 XdevBot

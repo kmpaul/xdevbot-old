@@ -15,3 +15,4 @@ dependencies:
   - pip:
     - motor
     - dnspython
+    - mockupdb

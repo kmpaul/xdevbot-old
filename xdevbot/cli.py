@@ -6,7 +6,7 @@ import click
 import jinja2
 from aiohttp import web
 
-from .database import close_db, init_db
+from .database import connect_db, disconnect_db
 from .middlewares import setup_middlewares
 from .routes import setup_routes
 
@@ -19,8 +19,8 @@ async def init_app(config=DEFAULT_CONFIG):
     app['config'] = config
     aiohttp_jinja2.setup(app, loader=jinja2.PackageLoader(__package__, 'templates'))
 
-    app.on_startup.append(init_db)
-    app.on_cleanup.append(close_db)
+    app.on_startup.append(connect_db)
+    app.on_cleanup.append(disconnect_db)
 
     setup_routes(app)
     setup_middlewares(app)

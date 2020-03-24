@@ -1,3 +1,5 @@
+from motor.motor_asyncio import AsyncIOMotorDatabase
+
 from xdevbot.cli import DEFAULT_CONFIG, init_app
 
 
@@ -7,4 +9,5 @@ async def test_database(aiohttp_client, mockdbserver, loop):
     app = await init_app(config=config)
     await aiohttp_client(app)
     db = app['db']
-    assert db is not None
+    print(type(db))
+    assert isinstance(db, AsyncIOMotorDatabase)

@@ -1,7 +1,7 @@
 [![circleci](https://img.shields.io/circleci/build/gh/ncar-xdev/xdevbot?label=circleci)](https://circleci.com/gh/ncar-xdev/xdevbot)
 [![codecov](https://img.shields.io/codecov/c/gh/ncar-xdev/xdevbot?label=codecov)](https://codecov.io/gh/ncar-xdev/xdevbot)
 [![license](https://img.shields.io/github/license/ncar-xdev/xdevbot)](http://www.apache.org/licenses/LICENSE-2.0)
-
+[![release](https://img.shields.io/github/v/release/ncar-xdev/xdevbot)](https://github.com/ncar-xdev/xdevbot/releases/latest)
 XdevBot
 =======
 

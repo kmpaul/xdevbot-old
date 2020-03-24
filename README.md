@@ -1,3 +1,5 @@
+[![ncar-xdev](https://circleci.com/gh/ncar-xdev/xdevbot.svg?style=svg)](https://circleci.com/gh/ncar-xdev/xdevbot)
+
 XdevBot
 =======
 

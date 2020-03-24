@@ -9,5 +9,4 @@ async def test_database(aiohttp_client, mockdbserver, loop):
     app = await init_app(config=config)
     await aiohttp_client(app)
     db = app['db']
-    print(type(db))
     assert isinstance(db, AsyncIOMotorDatabase)

@@ -7,11 +7,14 @@ body {
   background-image: url("../img/background.jpg");
   background-size: cover;
   position: relative;
-  z-index: -2;
+}
+
+.has-overlay {
+  z-index: 0;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
   left: 0;

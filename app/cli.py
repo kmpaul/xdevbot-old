@@ -39,7 +39,7 @@ def config_callback(ctx, config_param, config_file):
 
 
 @click.command()
-@click.version_option(prog_name='Xdev Bot', version='0.0.1')
+@click.version_option(prog_name='App', version='0.0.0')
 @click.option('--host', default=DEFAULT_CONFIG['host'], type=str, help='Server IP address')
 @click.option('--port', default=DEFAULT_CONFIG['port'], type=int, help='Server port number')
 @click.option('--logging', default=DEFAULT_CONFIG['logging'], help='Logging output level')

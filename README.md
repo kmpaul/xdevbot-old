@@ -6,7 +6,9 @@
 AIOHTTP Application Template
 ============================
 
-This is a simple template for an `aiohttp`-based web app.
+This is a simple template for an `aiohttp`-based web app.  It is designed to be easily deployable on Heroku,
+provide persistant storage with MongoDB, and has basic testing with `pytest` and continuous integration via
+CircleCI.
 
 aiohttp
 -------

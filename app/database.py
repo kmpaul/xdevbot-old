@@ -2,9 +2,10 @@ import motor.motor_asyncio
 
 
 async def connect_db(app):
-    if app['config']['mongodb']:
-        uri = app['config']['mongodb']
-        db = motor.motor_asyncio.AsyncIOMotorClient(uri, io_loop=app.loop).boards
+    if app['config']['mongouri']:
+        uri = app['config']['mongouri']
+        client = motor.motor_asyncio.AsyncIOMotorClient(uri, io_loop=app.loop)
+        db = client[app['config']['mongodb']]
     else:
         db = None
     app['db'] = db

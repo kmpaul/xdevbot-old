@@ -10,7 +10,13 @@ from .database import connect_db, disconnect_db
 from .middlewares import setup_middlewares
 from .routes import setup_routes
 
-DEFAULT_CONFIG = {'host': None, 'port': None, 'logging': logging.INFO, 'mongodb': None}
+DEFAULT_CONFIG = {
+    'host': None,
+    'port': None,
+    'logging': logging.INFO,
+    'mongouri': None,
+    'mongodb': 'db',
+}
 DEFAULT_CONFIG_PATHS = ['config.ini']
 
 
@@ -43,7 +49,10 @@ def config_callback(ctx, config_param, config_file):
 @click.option('--host', default=DEFAULT_CONFIG['host'], type=str, help='Server IP address')
 @click.option('--port', default=DEFAULT_CONFIG['port'], type=int, help='Server port number')
 @click.option('--logging', default=DEFAULT_CONFIG['logging'], help='Logging output level')
-@click.option('--mongodb', default=DEFAULT_CONFIG['mongodb'], type=str, help='MongoDB URI')
+@click.option('--mongouri', default=DEFAULT_CONFIG['mongouri'], type=str, help='MongoDB URI')
+@click.option(
+    '--mongodb', default=DEFAULT_CONFIG['mongodb'], type=str, help='MongoDB Database Name'
+)
 @click.option(
     '--config',
     default=None,

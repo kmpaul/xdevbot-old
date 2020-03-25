@@ -10,4 +10,4 @@ async def test_index(aiohttp_client, loop):
     assert resp.status == 200
     html_doc = await resp.text()
     soup = BeautifulSoup(html_doc, 'html.parser')
-    assert soup.title.string == 'Home'
+    assert soup.title.string == '[Title]'

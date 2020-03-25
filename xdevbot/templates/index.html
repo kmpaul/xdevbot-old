@@ -11,7 +11,6 @@
 {% endblock %}
 
 {% block header %}
-<header>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <a class="navbar-brand" href="#">{{ brand|default("[Brand]") }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,24 +38,24 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control-sm mr-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
-</header>
 {% endblock %}
 
 {% block main %}
 <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
+  <div class="jumbotron text-white bg-img">
+    <div class="overlay"></div>
     <div class="container">
       <h1 class="display-3">{{ heading|default("[Heading]", true) }}</h1>
       <p>This is a template for a simple simple landing page. It includes a large callout called a "jumbotron"
-         and variable number of subheading columns of content.  You may use this as a starting point to create
-         something more unique.  (This is based on the Bootstrap4.4 "Jumbotron" example.)</p>
+        and variable number of subheading columns of content.  You may use this as a starting point to create
+        something more unique.  (This is based on the Bootstrap4.4 "Jumbotron" example.)</p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
   </div>

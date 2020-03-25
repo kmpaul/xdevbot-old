@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
 {% block head %}
-<link href="{{ url('static', filename='css/jumbotron.css') }}" rel=stylesheet type=text/css>
-<title>{{ title }}</title>
+<link href="{{ url('static', filename='css/style.css') }}" rel=stylesheet type=text/css>
+<link rel="icon" href="{{ url('static', filename='img/favicon.ico') }}" />
+<title>{{ title|default("[Title]", true) }}</title>
 {% endblock %}
 
 {% block header %}
+<header>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">{{ brand|default("[Brand]") }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,7 +20,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Links</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -38,6 +40,7 @@
     </form>
   </div>
 </nav>
+</header>
 {% endblock %}
 
 {% block main %}
@@ -46,8 +49,10 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <h1 class="display-3">{{ heading|default("[Heading]", true) }}</h1>
+      <p>This is a template for a simple simple landing page. It includes a large callout called a "jumbotron"
+         and variable number of subheading columns of content.  You may use this as a starting point to create
+         something more unique.  (This is based on the Bootstrap4.4 "Jumbotron" example.)</p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
   </div>
@@ -55,21 +60,17 @@
   <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      {% set deftext="Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui." %}
+      {% for column in columns|default([("[Subheading]", "8", deftext), ("[Subheading]", "4", deftext)]) %}
+      {% set colheading=column[0] %}
+      {% set colwidth=column[1] %}
+      {% set coltext=column[2] %}
+      <div class="col-md-{{ colwidth }}">
+        <h2>{{ colheading }}</h2>
+        <p>{{ coltext }}</p>
+        <p><a class="btn btn-secondary" href="#" role="button">Details &raquo;</a></p>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
+      {% endfor %}
     </div>
 
     <hr>
@@ -81,6 +82,6 @@
 
 {% block footer %}
 <footer class="container">
-  <p>&copy; Company 2020</p>
+  <p>&copy; {{ copyright|default("[Company]", true) }} 2020</p>
 </footer>
 {% endblock %}
